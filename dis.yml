@@ -1,0 +1,15 @@
+# /Users/truyvv/.config/tmuxinator/dis.yml
+
+name: distamps
+root: ~/projects/distamps
+
+on_project_start: resize -s 50 220
+tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - Distamps:
+      layout: tiled
+      panes:
+        - clear && ~/test.sh
+        - j8 && nvm use 8 && /Users/truyvv/projects/distamps/node_modules/react-native/scripts/launchPackager.command; exit
+        - j8 && nvm use 8 && sleep 2s && react-native run-android
