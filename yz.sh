@@ -182,7 +182,13 @@ chmod +x dockutil
 ./dockutil --remove 'FaceTime' > /dev/null
 ./dockutil --remove 'iTunes' > /dev/null
 ./dockutil --remove 'iBooks' > /dev/null
+
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                           YZ-OSX-Installer finished :) \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
-read -p "RETURN 2 end"
+read -p "CTRL+C 2 end, RETURN 2 delete the Installer-file"
+if [ .-z ${1+x} ];
+then sudo rm -rf $1;
+fi
+read -p "CTRL+C 2 end, RETURN 2 delete all Installer-dependencies"
+sudo rm -rf ~/YZosx
