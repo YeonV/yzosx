@@ -21,7 +21,16 @@ echo "Installing git..."
 brew install git
 
 echo "Installing nvm ..."
-brew install nvm
+mkdir -p ~/.nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source ~/.bash_profile
+
+echo "Installing node 8 ..."
+nvm install 8
+
+echo "Installing node 9 ..."
+nvm install 9
+npm config delete prefix
 
 echo "Installing yarn..."
 brew install yarn
@@ -70,10 +79,11 @@ sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s $(which zsh)
 
 echo "Installing Oh My Zsh ..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sudo cp .zshrc ~/.zshrc
-sleep 3s
-exit
+# sleep 3s
+# exit
+source ~/.zshrc
 
 # DEV-TOOLZ
 echo "Installing Docker ..."

@@ -4,7 +4,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/truyvv/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -122,7 +122,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=/usr/local/bin:$PATH
 alias fuck_docker='docker kill $(docker ps -q) 2>/dev/null || docker rm $(docker ps -a -q)'
-alias j9="export JAVA_HOME=`/usr/libexec/java_home -v 9`; java -version"
+alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
 alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 
 avd() {
@@ -133,10 +133,10 @@ avd() {
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# [[ -f /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+# [[ -f /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/truyvv/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
 
 
 
