@@ -27,6 +27,18 @@ brew cask install iterm2
 echo "Installing z..."
 brew install z
 
+echo "Installing Zsh ..."
+brew install zsh zsh-completions
+sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
+chsh -s $(which zsh)
+
+echo "Installing Oh My Zsh ..."
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# sleep 3s
+# exit
+source ~/.zshrc
+
 # echo "Installing fzf"
 
 echo "Installing git..."
@@ -76,17 +88,7 @@ echo "Installing tmuxinator..."
 gem install tmuxinator -v 0.9.0
 
 
-echo "Installing Zsh ..."
-brew install zsh zsh-completions
-sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-chsh -s $(which zsh)
 
-echo "Installing Oh My Zsh ..."
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# sleep 3s
-# exit
-source ~/.zshrc
 
 # DEV-TOOLZ
 echo "Installing Docker ..."
