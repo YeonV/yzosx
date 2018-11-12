@@ -163,10 +163,26 @@ echo "\033[1;31m                               Installing Chrome ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 sudo -u $loggedInUser brew cask install google-chrome
 
+echo "\033[1;31m================================================================================\033[0m"
+echo "\033[1;31m                                 Cleaning Dock ...\033[0m"
+echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 sudo cp .zshrc ~/.zshrc
 source ~/.zshrc > /dev/null 2>&1
 chmod +x *.sh
-./yzdock.sh
+chmod +x dockutil
+./dockutil --remove 'Siri' > /dev/null
+./dockutil --remove 'Safari' > /dev/null
+./dockutil --remove 'Mail' > /dev/null
+./dockutil --remove 'Kontakte' > /dev/null
+./dockutil --remove 'Kalender' > /dev/null
+./dockutil --remove 'Notizen' > /dev/null
+./dockutil --remove 'Erinnerungen' > /dev/null
+./dockutil --remove 'Karten' > /dev/null
+./dockutil --remove 'Fotos' > /dev/null
+./dockutil --remove 'Nachrichten' > /dev/null
+./dockutil --remove 'FaceTime' > /dev/null
+./dockutil --remove 'iTunes' > /dev/null
+./dockutil --remove 'iBooks' > /dev/null
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                           YZ-OSX-Installer finished :) \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
