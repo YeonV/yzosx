@@ -1,3 +1,3 @@
 # yzosx
 
-```https://github.com/YeonV/yzosx.git```
+```curl https://raw.githubusercontent.com/YeonV/yzosx/master/install.sh -o install.sh && chmod +x install.sh && ./install.sh```
