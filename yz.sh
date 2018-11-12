@@ -1,13 +1,16 @@
 #!/bin/sh
 
-read -p "YZ-OSX-Installer"
+read -p "YZ-OSX-Installer - SUDO"
+loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+
+
 
 # SYSTEM-TOOLZ
 echo "Installing brew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing brew cask..."
-brew tap caskroom/cask
+sudo -u $loggedInUser 'brew tap caskroom/cask'
 
 sudo mkdir -p ~/.bin
 sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
@@ -22,13 +25,13 @@ sudo cp .zshrc ~/.zshrc
 sudo chmod +x ~/test.sh
 
 echo "Installing iTerm2 ..."
-brew cask install iterm2
+sudo -u $loggedInUser 'brew cask install iterm2'
 
 echo "Installing z..."
-brew install z
+sudo -u $loggedInUser 'brew install z'
 
 echo "Installing Zsh ..."
-brew install zsh zsh-completions
+sudo -u $loggedInUser 'brew install zsh zsh-completions'
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s $(which zsh)
 
@@ -43,7 +46,7 @@ source ~/.zshrc
 # echo "Installing fzf"
 
 echo "Installing git..."
-brew install git
+sudo -u $loggedInUser 'brew install git'
 
 echo "Installing nvm ..."
 mkdir -p ~/.nvm
@@ -58,29 +61,29 @@ nvm install 9
 npm config delete prefix
 
 echo "Installing yarn..."
-brew install yarn
+sudo -u $loggedInUser 'brew install yarn'
 
 
 echo "Installing Java8 ..."
-brew tap caskroom/versions
-brew cask install java8
+sudo -u $loggedInUser 'brew tap caskroom/versions'
+sudo -u $loggedInUser 'brew cask install java8'
 
 echo "Installing Java ..."
-brew cask install java
+sudo -u $loggedInUser 'brew cask install java'
 
 echo "Installing python ..."
-brew install python
-brew install python@2
+sudo -u $loggedInUser 'brew install python'
+sudo -u $loggedInUser 'brew install python@2'
 
 
 echo "Installing thefuck..."
-brew install thefuck
+sudo -u $loggedInUser 'brew install thefuck'
 
 echo "Installing tmux..."
-brew install tmux
+sudo -u $loggedInUser 'brew install tmux'
 
 echo "Installing ruby..."
-brew install ruby
+sudo -u $loggedInUser 'brew install ruby'
 echo 'export PATH="usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
@@ -89,6 +92,7 @@ source ~/.zshrc
 echo "Installing tmuxinator..."
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install 2.2.3 --disable-binary
+source ~/.rvm/scripts/rvm
 gem install tmuxinator -v 0.9.0
 
 
@@ -96,23 +100,23 @@ gem install tmuxinator -v 0.9.0
 
 # DEV-TOOLZ
 echo "Installing Docker ..."
-brew install docker docker-compose
+sudo -u $loggedInUser 'brew install docker docker-compose'
 
 echo "Installing VirtualBox ..."
-brew cask install virtualbox
+sudo -u $loggedInUser 'brew cask install virtualbox'
 
 echo "Installing Synergy ..."
-brew cask install synergy
+sudo -u $loggedInUser 'brew cask install synergy'
 
 echo "Installing Code ..."
-brew cask install visual-studio-code
+sudo -u $loggedInUser 'brew cask install visual-studio-code'
 
 echo "Installing Sourcetree ..."
-brew cask install sourcetree
+sudo -u $loggedInUser 'brew cask install sourcetree'
 
 # USER-TOOLZ
 echo "Installing Chrome ..."
-brew cask install google-chrome
+sudo -u $loggedInUser 'brew cask install google-chrome'
 
 chmod +x *.sh
 ./yzdock.sh
