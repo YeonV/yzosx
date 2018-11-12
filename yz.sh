@@ -26,6 +26,19 @@ brew install nvm
 echo "Installing yarn..."
 brew install yarn
 
+
+echo "Installing Java8 ..."
+brew tap caskroom/versions
+brew cask install java8
+
+echo "Installing Java ..."
+brew cask install java
+
+echo "Installing python ..."
+brew install python
+brew install python@2
+
+
 echo "Installing thefuck..."
 brew install thefuck
 
@@ -34,16 +47,19 @@ brew install tmux
 
 echo "Installing ruby..."
 brew install ruby
-
+echo 'export PATH="usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+source ~/.bash_profile
 echo "Installing tmuxinator..."
 gem install tmuxinator
-sudo cp tmuxinator.zsh ~/.bin/tmuxinator.zsh
-sudo cp .tmux.mac.conf ~/.tmux.mac.conf
-sudo cp test.sh ~/test.sh
+sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
+sudo cp ./.tmux.mac.conf ~/.tmux.mac.conf
+sudo cp ./test.sh ~/test.sh
 sudo chmod +x ~/test.sh
-sudo cp dis.yml ~/.config/tmuxinator/dis.yml
-sudo cp or.yml ~/.config/tmuxinator/or.yml
-sudo cp wp.yml ~/.config/tmuxinator/wp.yml
+sudo cp ./dis.yml ~/.config/tmuxinator/dis.yml
+sudo cp ./or.yml ~/.config/tmuxinator/or.yml
+sudo cp ./wp.yml ~/.config/tmuxinator/wp.yml
 
 echo "Installing Zsh ..."
 brew install zsh zsh-completions
@@ -52,7 +68,9 @@ chsh -s $(which zsh)
 
 echo "Installing Oh My Zsh ..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo cp .zshrc ~/.zshrc
+sudo cp ./.zshrc ~/.zshrc
+sleep 3s
+exit
 
 # DEV-TOOLZ
 echo "Installing Docker ..."
@@ -69,16 +87,6 @@ brew cask install visual-studio-code
 
 echo "Installing Sourcetree ..."
 brew cask install sourcetree
-
-echo "Installing Java8 ..."
-brew cask install java8
-
-echo "Installing Java ..."
-brew cask install java
-
-echo "Installing python ..."
-brew install python
-brew install python@2
 
 # USER-TOOLZ
 echo "Installing Chrome ..."
