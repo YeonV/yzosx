@@ -1,3 +1,3 @@
 # yzosx
 
-[CODE]https://github.com/YeonV/yzosx.git[/Code]
+```https://github.com/YeonV/yzosx.git```
