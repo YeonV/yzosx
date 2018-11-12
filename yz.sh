@@ -35,7 +35,7 @@ brew install git
 echo "Installing nvm ..."
 mkdir -p ~/.nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-source ~/.bash_profile
+source ~/.zshrc
 
 echo "Installing node 8 ..."
 nvm install 8
