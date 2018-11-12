@@ -9,6 +9,18 @@ echo "Installing brew..."
 echo "Installing brew cask..."
 brew tap caskroom/cask
 
+sudo mkdir -p ~/.bin
+sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
+sudo cp .tmux.mac.conf ~/.tmux.mac.conf
+sudo cp ./test.sh ~/test.sh
+sudo mkdir -p ~/.config
+sudo mkdir -p ~/.config/tmuxinator
+sudo cp dis.yml ~/.config/tmuxinator/dis.yml
+sudo cp or.yml ~/.config/tmuxinator/or.yml
+sudo cp wp.yml ~/.config/tmuxinator/wp.yml
+sudo cp .zshrc ~/.zshrc
+sudo chmod +x ~/test.sh
+
 echo "Installing iTerm2 ..."
 brew cask install iterm2
 
@@ -59,19 +71,10 @@ brew install ruby
 echo 'export PATH="usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
-source ~/.bash_profile
+source ~/.zshrc
 echo "Installing tmuxinator..."
 gem install tmuxinator -v 0.9.0
-sudo mkdir -p ~/.bin
-sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
-sudo cp .tmux.mac.conf ~/.tmux.mac.conf
-sudo cp ./test.sh ~/test.sh
-sudo mkdir -p ~/.config
-sudo mkdir -p ~/.config/tmuxinator
-sudo cp dis.yml ~/.config/tmuxinator/dis.yml
-sudo cp or.yml ~/.config/tmuxinator/or.yml
-sudo cp wp.yml ~/.config/tmuxinator/wp.yml
-sudo chmod +x ~/test.sh
+
 
 echo "Installing Zsh ..."
 brew install zsh zsh-completions
@@ -80,7 +83,7 @@ chsh -s $(which zsh)
 
 echo "Installing Oh My Zsh ..."
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo cp .zshrc ~/.zshrc
+
 # sleep 3s
 # exit
 source ~/.zshrc
