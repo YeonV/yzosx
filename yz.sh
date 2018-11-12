@@ -52,13 +52,13 @@ export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 source ~/.bash_profile
 echo "Installing tmuxinator..."
-gem install tmuxinator
-mkdir -p ~/.bin
+gem install tmuxinator -v 0.9.0
+sudo mkdir -p ~/.bin
 sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
 sudo cp .tmux.mac.conf ~/.tmux.mac.conf
 sudo cp ./test.sh ~/test.sh
-mkdir -p ~/.config
-mkdir -p ~/.config/tmuxinator
+sudo mkdir -p ~/.config
+sudo mkdir -p ~/.config/tmuxinator
 sudo cp dis.yml ~/.config/tmuxinator/dis.yml
 sudo cp or.yml ~/.config/tmuxinator/or.yml
 sudo cp wp.yml ~/.config/tmuxinator/wp.yml
