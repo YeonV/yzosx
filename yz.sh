@@ -10,7 +10,7 @@ loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                                Installing brew...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
-sudo -u $loggedInUser /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+sudo -u $loggedInUser /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                              Installing brew cask...\033[0m"
