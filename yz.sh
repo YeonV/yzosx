@@ -53,13 +53,16 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 source ~/.bash_profile
 echo "Installing tmuxinator..."
 gem install tmuxinator
+mkdir -p ~/.bin
 sudo cp ./tmuxinator.zsh ~/.bin/tmuxinator.zsh
-sudo cp ./.tmux.mac.conf ~/.tmux.mac.conf
+sudo cp .tmux.mac.conf ~/.tmux.mac.conf
 sudo cp ./test.sh ~/test.sh
+mkdir -p ~/.config
+mkdir -p ~/.config/tmuxinator
+sudo cp dis.yml ~/.config/tmuxinator/dis.yml
+sudo cp or.yml ~/.config/tmuxinator/or.yml
+sudo cp wp.yml ~/.config/tmuxinator/wp.yml
 sudo chmod +x ~/test.sh
-sudo cp ./dis.yml ~/.config/tmuxinator/dis.yml
-sudo cp ./or.yml ~/.config/tmuxinator/or.yml
-sudo cp ./wp.yml ~/.config/tmuxinator/wp.yml
 
 echo "Installing Zsh ..."
 brew install zsh zsh-completions
@@ -68,7 +71,7 @@ chsh -s $(which zsh)
 
 echo "Installing Oh My Zsh ..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo cp ./.zshrc ~/.zshrc
+sudo cp .zshrc ~/.zshrc
 sleep 3s
 exit
 
