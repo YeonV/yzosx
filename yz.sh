@@ -37,6 +37,7 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zs
 
 # sleep 3s
 # exit
+sudo cp .zshrc ~/.zshrc
 source ~/.zshrc
 
 # echo "Installing fzf"
@@ -84,7 +85,10 @@ echo 'export PATH="usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 source ~/.zshrc
+
 echo "Installing tmuxinator..."
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install 2.2.3 --disable-binary
 gem install tmuxinator -v 0.9.0
 
 
@@ -110,4 +114,6 @@ brew cask install sourcetree
 echo "Installing Chrome ..."
 brew cask install google-chrome
 
+chmod +x *.sh
+./yzdock.sh
 read -p "YZ-OSX-Ready"
