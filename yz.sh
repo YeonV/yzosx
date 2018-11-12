@@ -2,7 +2,6 @@
 clear
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                                 YZ-OSX-Installer \033[0m"
-echo "\033[1;31m                               - plz run with sudo - \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
 read -p "RETURN 2 start"
 loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
