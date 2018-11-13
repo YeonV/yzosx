@@ -49,7 +49,7 @@ chsh -s $(which zsh)
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                             Installing Oh My Zsh ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')" \
 
 # sleep 3s
 # exit
