@@ -131,9 +131,10 @@ echo "\033[1;31m================================================================
 echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 curl -sSL https://get.rvm.io | sudo -u $loggedInUser bash -s stable
-sudo su
+sudo su $loggedInUser
 source ~/.rvm/scripts/rvm
-sudo -u $loggedInUser rvm install 2.4 --disable-binary
+rvm install 2.4 --disable-binary
+exit
 gem sources -r https://rubygems.org/
 gem sources --add https://rubygems.org
 sudo -u $loggedInUser gem install tmuxinator
