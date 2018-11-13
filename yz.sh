@@ -202,6 +202,4 @@ sudo sed -i "/Defaults timestamp_timeout=-1/d">>/etc/sudoers
 # sudo rm -rf ~/YZosx
 sudo chown $loggedInUser ~/*
 sudo chown $loggedInUser ~/.*
-chsh -s $(which zsh)
-env zsh
-exit
+
