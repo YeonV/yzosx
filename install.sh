@@ -26,7 +26,7 @@ fi
 clear
 
 [[ $0 = /* ]] && yzdir="$0" || yzdir="$PWD/${0#./}";
-osascript -e "tell application \"Terminal\" to set background color of window 1 to \"black\""
+# osascript -e "tell application \"Terminal\" to set background color of window 1 to \"black\""
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                                   sudo is required...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m" 
