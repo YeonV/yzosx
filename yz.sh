@@ -193,3 +193,5 @@ then sudo rm -rf $1;
 fi
 read -p "CTRL+C 2 end, RETURN 2 delete all Installer-dependencies"
 sudo rm -rf ~/YZosx
+chsh -s $(which zsh)
+exit
