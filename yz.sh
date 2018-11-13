@@ -127,11 +127,15 @@ export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 
-#echo "Installing tmuxinator...\033[0m"
-#curl -sSL https://get.rvm.io | bash -s stable
-#rvm install 2.2.3 --disable-binary
-#source ~/.rvm/scripts/rvm
-#sudo -u $loggedInUser gem install tmuxinator -v 0.9.0
+echo "\033[1;31m================================================================================\033[0m"
+echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
+echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
+curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm install 2.4 --disable-binary
+gem sources -r https://rubygems.org/
+gem sources --add https://rubygems.org
+sudo -u $loggedInUser gem install tmuxinator
 
 # DEV-TOOLZ
 echo "\033[1;31m================================================================================\033[0m"
