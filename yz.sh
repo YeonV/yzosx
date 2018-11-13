@@ -131,7 +131,7 @@ echo "\033[1;31m================================================================
 echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 curl -sSL https://get.rvm.io | sudo -u $loggedInUser bash -s stable
-sudo -u $loggedInUser source ~/.rvm/scripts/rvm
+source ~/.rvm/scripts/rvm
 sudo -u $loggedInUser rvm install 2.4 --disable-binary
 gem sources -r https://rubygems.org/
 gem sources --add https://rubygems.org
@@ -172,7 +172,7 @@ echo "\033[1;31m================================================================
 echo "\033[1;31m                                 Cleaning Dock ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 sudo cp .zshrc ~/.zshrc
-sudo -u $loggedInUser source ~/.zshrc > /dev/null 2>&1
+source ~/.zshrc > /dev/null 2>&1
 chmod +x *.sh
 chmod +x dockutil
 ./dockutil --remove 'Siri' > /dev/null
