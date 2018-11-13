@@ -15,6 +15,7 @@ then
     curl https://raw.githubusercontent.com/YeonV/yzosx/master/test.sh -o test.sh
     curl https://raw.githubusercontent.com/YeonV/yzosx/master/tmuxinator.zsh -o tmuxinator.zsh
     curl https://raw.githubusercontent.com/YeonV/yzosx/master/wp.yml -o wp.yml
+    curl https://raw.githubusercontent.com/YeonV/yzosx/master/mux.sh -o mux.sh
     chmod +x *.sh
     chmod +x dockutil
 else
@@ -32,3 +33,4 @@ echo "\033[1;31m                                   sudo is required...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m" 
 sudo sh -c 'echo "\nDefaults timestamp_timeout=-1">>/etc/sudoers'
 sudo ./yz.sh $yzdir
+./mux.sh

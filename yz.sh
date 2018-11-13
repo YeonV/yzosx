@@ -127,16 +127,16 @@ export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 
-echo "\033[1;31m================================================================================\033[0m"
-echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
-echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
-curl -sSL https://get.rvm.io | sudo -u $loggedInUser bash -s stable
-source ~/.rvm/scripts/rvm
-sudo -u $loggedInUser rvm install 2.4 --disable-binary
-gem sources -r https://rubygems.org/
-# gem sources --add https://rubygems.org
-echo -e '--- \nsources:\n- http://rubygems.org' >> ~/.gemrc
-sudo -u $loggedInUser gem install tmuxinator -v 0.9.0
+# echo "\033[1;31m================================================================================\033[0m"
+# echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
+# echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
+# curl -sSL https://get.rvm.io | sudo -u $loggedInUser bash -s stable
+# source ~/.rvm/scripts/rvm
+# rvm install 2.4 --disable-binary
+# gem sources -r https://rubygems.org/
+# # gem sources --add https://rubygems.org
+# echo -e '--- \nsources:\n- http://rubygems.org' >> ~/.gemrc
+# gem install tmuxinator -v 0.9.0
 
 # DEV-TOOLZ
 echo "\033[1;31m================================================================================\033[0m"
@@ -194,12 +194,12 @@ echo "\033[1;31m================================================================
 echo "\033[1;31m                           YZ-OSX-Installer finished :) \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
 sudo sed -i "/Defaults timestamp_timeout=-1/d">>/etc/sudoers
-read -p "CTRL+C 2 end, RETURN 2 delete the Installer-file"
-if [ .-z ${1+x} ];
-then sudo rm -rf $1;
-fi
-read -p "CTRL+C 2 end, RETURN 2 delete all Installer-dependencies"
-sudo rm -rf ~/YZosx
+# read -p "CTRL+C 2 end, RETURN 2 delete the Installer-file"
+# if [ .-z ${1+x} ];
+# then sudo rm -rf $1;
+# fi
+# read -p "CTRL+C 2 end, RETURN 2 delete all Installer-dependencies"
+# sudo rm -rf ~/YZosx
 sudo chown $loggedInUser ~/*
 sudo chown $loggedInUser ~/.*
 chsh -s $(which zsh)
