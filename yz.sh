@@ -46,15 +46,12 @@ echo "\033[1;31m                                Installing Zsh ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 sudo -u $loggedInUser brew install zsh zsh-completions
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                             Installing Oh My Zsh ...\033[0m"
 echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')" \
-
-# sleep 3s
-# exit
 
 # echo "Installing fzf"
 
@@ -69,7 +66,7 @@ echo "\033[1;31m----------------------------------------------------------------
 mkdir -p ~/.nvm
 sudo -u $loggedInUser curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 npm config delete prefix
 
@@ -126,18 +123,6 @@ echo 'export PATH="usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
-
-# echo "\033[1;31m================================================================================\033[0m"
-# echo "\033[1;31m                            Installing tmuxinator ...\033[0m"
-# echo "\033[1;31m--------------------------------------------------------------------------------\033[0m"
-# curl -sSL https://get.rvm.io | sudo -u $loggedInUser bash -s stable
-# source ~/.rvm/scripts/rvm
-# rvm install 2.4 --disable-binary
-# gem sources -r https://rubygems.org/
-# # gem sources --add https://rubygems.org
-# echo -e '--- \nsources:\n- http://rubygems.org' >> ~/.gemrc
-# gem install tmuxinator -v 0.9.0
-
 # DEV-TOOLZ
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                               Installing Docker ...\033[0m"
@@ -193,7 +178,7 @@ chmod +x dockutil
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                           YZ-OSX-Installer finished :) \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
-sudo sed -i "/Defaults timestamp_timeout=-1/d">>/etc/sudoers
+sudo sed -i "/Defaults timestamp_timeout=-1/d" /etc/sudoers
 # read -p "CTRL+C 2 end, RETURN 2 delete the Installer-file"
 # if [ .-z ${1+x} ];
 # then sudo rm -rf $1;
@@ -202,4 +187,5 @@ sudo sed -i "/Defaults timestamp_timeout=-1/d">>/etc/sudoers
 # sudo rm -rf ~/YZosx
 sudo chown $loggedInUser ~/*
 sudo chown $loggedInUser ~/.*
+sudo chown -R $loggedInUser /Library/Ruby/Gems
 
