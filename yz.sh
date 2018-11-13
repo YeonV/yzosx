@@ -6,6 +6,8 @@ echo "\033[1;31m================================================================
 #read -p "RETURN 2 start"
 loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
 sudo chown -R $USER:$(id -gn $USER) ~/.config
+sudo chown $loggedInUser ~/*
+sudo chown $loggedInUser ~/.*
 
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                                Installing brew...\033[0m"
@@ -193,5 +195,8 @@ then sudo rm -rf $1;
 fi
 read -p "CTRL+C 2 end, RETURN 2 delete all Installer-dependencies"
 sudo rm -rf ~/YZosx
+sudo chown $loggedInUser ~/*
+sudo chown $loggedInUser ~/.*
 chsh -s $(which zsh)
+env zsh
 exit
