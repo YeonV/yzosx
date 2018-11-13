@@ -68,7 +68,6 @@ sudo -u $loggedInUser curl -o- https://raw.githubusercontent.com/creationix/nvm/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-npm config delete prefix
 
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                                Installing node 8 ...\033[0m"
