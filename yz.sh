@@ -177,7 +177,7 @@ chmod +x dockutil
 echo "\033[1;31m================================================================================\033[0m"
 echo "\033[1;31m                           YZ-OSX-Installer finished :) \033[0m"
 echo "\033[1;31m================================================================================\033[0m"
-sudo sed -i "/Defaults timestamp_timeout=-1/d" /etc/sudoers
+# sudo sed -i "/Defaults timestamp_timeout=-1/d" /etc/sudoers
 # read -p "CTRL+C 2 end, RETURN 2 delete the Installer-file"
 # if [ .-z ${1+x} ];
 # then sudo rm -rf $1;
@@ -186,5 +186,6 @@ sudo sed -i "/Defaults timestamp_timeout=-1/d" /etc/sudoers
 # sudo rm -rf ~/YZosx
 sudo chown $loggedInUser ~/*
 sudo chown $loggedInUser ~/.*
+sudo chown -R $loggedInUser ~/.config
 sudo chown -R $loggedInUser /Library/Ruby/Gems
 
